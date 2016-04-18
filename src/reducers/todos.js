@@ -1,23 +1,17 @@
 import Immutable, {Map} from 'immutable';
 import * as types from '../constants/ActionTypes';
 
-const initialState = Immutable.fromJS({
-    lastId: 2,
-    todoList: {
-        1: {
-            id: 1,
-            content: 'hey',
-            type: 2,
-            completed: false
-        },
-        2: {
-            id: 2,
-            content: 'yo',
-            type: 3,
-            completed: false
-        }
-    }
-});
+let localState = localStorage.getItem('todos');
+
+if (!localState) {
+    localStorage.setItem('todos', JSON.stringify({
+        lastId: 0,
+        todoList: {}
+    }));
+    localState = localStorage.getItem('todos');;
+}
+
+const initialState = Immutable.fromJS(JSON.parse(localState));
 
 export default function todos (state=initialState, action) {
     switch (action.type) {
