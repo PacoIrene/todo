@@ -10,7 +10,7 @@ export default class TodoItem extends Component {
     static propTypes = {
         id: PropTypes.number.isRequired,
         content: PropTypes.string.isRequired,
-        type: PropTypes.number.isRequired,
+        type: PropTypes.string.isRequired,
         completed: PropTypes.bool,
         deleteItem: PropTypes.func.isRequired,
         completeItem: PropTypes.func.isRequired
