@@ -5,8 +5,6 @@
 
 import React, {Component, PropTypes} from 'react';
 import TodoItem from './TodoItem';
-import _ from 'lodash';
-import TodoTypes from '../constants/TodoTypes';
 
 export default class TodoList extends Component {
     static propTypes = {
@@ -19,13 +17,12 @@ export default class TodoList extends Component {
             <ul>
                 {
                     _.map(this.props.todos, todo => {
-                        const type = _.find(TodoTypes, {id: todo.type}).text;
                         return (
                             <TodoItem
                                 key = {todo.id}
                                 id = {todo.id}
                                 content = {todo.content}
-                                type = {type}
+                                type = {todo.type}
                                 time = {todo.time}
                                 location = {todo.location}
                                 completed = {todo.completed}

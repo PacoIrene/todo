@@ -5,12 +5,14 @@
 
 import React, {Component, PropTypes} from 'react';
 import {browserHistory} from 'react-router';
+import TodoTypes from '../constants/TodoTypes';
+import _ from 'lodash';
 
 export default class TodoItem extends Component {
     static propTypes = {
         id: PropTypes.number.isRequired,
         content: PropTypes.string.isRequired,
-        type: PropTypes.string.isRequired,
+        type: PropTypes.number.isRequired,
         completed: PropTypes.bool,
         deleteItem: PropTypes.func.isRequired,
         completeItem: PropTypes.func.isRequired
@@ -20,7 +22,7 @@ export default class TodoItem extends Component {
         const completeButton = <button onClick={() => this.props.completeItem(this.props.id)}>complete</button>;
         return (
             <div>
-                <span>{this.props.type}</span>
+                <span>{_.find(TodoTypes, {id: this.props.type}).text}</span>
                 <div>
                     <p onClick={this.readDetail.bind(this)}>{this.props.content}</p>
                     <p>{this.props.time}{this.props.location}</p>
