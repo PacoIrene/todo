@@ -32,10 +32,6 @@ class Index extends Component {
             </div>
         );
     }
-
-    toAdd(e) {
-
-    }
 }
 
 function getSummary(todoList) {

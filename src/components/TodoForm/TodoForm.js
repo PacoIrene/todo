@@ -5,8 +5,12 @@
 
 import React, {Component, PropTypes} from 'react';
 import _ from 'lodash';
-import TodoTypes from '../../constants/TodoTypes';
 import {browserHistory} from 'react-router';
+
+import TodoTypes from '../../constants/TodoTypes';
+import Select from '../Select/Select';
+
+import './TodoForm.scss';
 
 export default class TodoForm extends Component {
     static propTypes = {
@@ -15,32 +19,32 @@ export default class TodoForm extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            content: props.content || '',
-            type: props.type || 1
+            content: props.content || ''
         };
     }
 
     render() {
         const buttonText = this.props.id ? 'Update' : 'Add to your things';
         return (
-            <section>
-                <select
-                    onChange={this.handleTypeChange.bind(this)}
-                    value={this.state.type}>
-                    {
+            <section className="form-container">
+                <Select
+                    value={this.props.type}
+                    className="control"
+                    ref="type"
+                    options={
                         _.map(TodoTypes, type => {
-                            return (
-                                <option value={type.id} key={type.id}>
-                                    {type.text}
-                                </option>
-                            );
+                            return {
+                                value: type.id,
+                                text: type.text
+                            };
                         })
-                    }
-                </select>
+                    }>
+                </Select>
                 <input
+                    className="input control"
                     type="text"
                     autoFocus="true"
-                    placeholder="Thing's content"
+                    placeholder="Content"
                     value={this.state.content}
                     onChange={this.handleContentChange.bind(this)} />
                 <button onClick={this.handleSubmit.bind(this)}>{buttonText}</button>
@@ -55,20 +59,12 @@ export default class TodoForm extends Component {
         });
     }
 
-    handleTypeChange(e) {
-        this.setState({
-            ...this.state,
-            type: e.target.value
-        });
-    }
-
     handleSubmit(e) {
         const id = this.props.id;
-        const type = parseInt(this.state.type, 10);
+        const type = parseInt(this.refs.type.state.value, 10);
         const content = this.state.content.trim();
-        if (content) {
+        if (content && type) {
             this.setState({
-                type: 1,
                 content: ''
             });
             this.props.submitForm({id, type, content});

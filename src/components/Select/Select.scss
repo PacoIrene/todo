@@ -1,0 +1,52 @@
+@import "../../styles/_variable.scss";
+
+$select-left-padding: 10px;
+
+.select {
+    position: relative;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    transition: all 0.3s ease-out;
+    border-bottom: 1px solid $form-border-color;
+    cursor: pointer;
+    ul {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        padding: 0;
+        margin: 0;
+        background-color: $form-background-color;
+        border-top: 0;
+        box-shadow: 0 1px 20px $form-background-color * 0.8;
+        li {
+            list-style: none;
+            padding-left: $select-left-padding;
+            &:hover {
+                background-color: $form-background-color * 0.97;
+            }
+        }
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        right: 2px;
+        width: 12px;
+        height: 100%;
+        background: url('../../image/drop.png') no-repeat center;
+        background-size: 12px;
+        transition: all 0.3s ease;
+    }
+}
+
+.select.active {
+    border-bottom: 1px solid $form-background-color;
+    ul {
+        display: block;
+    }
+    &:after {
+        transform: rotate(180deg);
+        transition: all 0.3s ease;
+    }
+}

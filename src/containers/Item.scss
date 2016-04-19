@@ -1,11 +1,10 @@
-$form-background-color: #46529d;
-$font-color: #fff;
-$form-border-color: #6b74b0;
+@import "../styles/_variable.scss";
 
 .todo-form {
     background-color: $form-background-color;
     color: $font-color;
     padding: 0 20px;
+    width: 100%;
 }
 .todo-form-head {
     margin: 20px 0;
@@ -18,7 +17,7 @@ $form-border-color: #6b74b0;
         height: 40px;
         width: 40px;
         background: url('../image/arrows.png') no-repeat center;
-        background-size: 20px;
+        background-size: 18px;
         border-radius: 50%;
         &:hover {
             background-color: $form-border-color;
@@ -34,12 +33,9 @@ $form-border-color: #6b74b0;
 .todo-form-logo {
     height: 60px;
     width: 60px;
+    margin: 20px auto;
     background: url('../image/form-logo.png') no-repeat center;
     background-size: 30px;
     border-radius: 50%;
     border: 1px solid $form-border-color;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
 }

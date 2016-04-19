@@ -1,0 +1,40 @@
+@import "../../styles/_variable.scss";
+
+$control-height: 35px;
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.control {
+    margin: 10px 0;
+}
+
+.control.input {
+    height: $control-height;
+    background-color: $form-background-color;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $form-border-color;
+    &::-webkit-input-placeholder {
+        color: $form-border-color;
+    }
+}
+
+.form-container button {
+    height: $control-height * 1.2;
+    margin-top: 15px;
+    background-color: $highlight-color;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 1px 1px 10px $form-background-color * 0.8;
+    &:focus {
+        border: none;
+        outline: none;
+    }
+    &:hover {
+        background-color: $highlight-color * 0.95;
+        color: #fff * 0.95;
+    }
+}
