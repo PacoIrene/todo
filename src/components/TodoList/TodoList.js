@@ -4,7 +4,7 @@
  */
 
 import React, {Component, PropTypes} from 'react';
-import TodoItem from './TodoItem';
+import TodoItem from '../TodoItem/TodoItem';
 
 export default class TodoList extends Component {
     static propTypes = {

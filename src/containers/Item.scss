@@ -1,0 +1,45 @@
+$form-background-color: #46529d;
+$font-color: #fff;
+$form-border-color: #6b74b0;
+
+.todo-form {
+    background-color: $form-background-color;
+    color: $font-color;
+    padding: 0 20px;
+}
+.todo-form-head {
+    margin: 20px 0;
+    height: 40px;
+    text-align: center;
+    position: relative;
+    a {
+        position: absolute;
+        left: 0;
+        height: 40px;
+        width: 40px;
+        background: url('../image/arrows.png') no-repeat center;
+        background-size: 20px;
+        border-radius: 50%;
+        &:hover {
+            background-color: $form-border-color;
+        }
+    }
+    span {
+        font-size: 20px;
+        display: inline-block;
+        margin: 10px 0;
+    }
+}
+
+.todo-form-logo {
+    height: 60px;
+    width: 60px;
+    background: url('../image/form-logo.png') no-repeat center;
+    background-size: 30px;
+    border-radius: 50%;
+    border: 1px solid $form-border-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}

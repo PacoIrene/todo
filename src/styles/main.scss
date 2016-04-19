@@ -1,0 +1,24 @@
+@import '_reset.scss';
+
+@font-face {
+    font-family: "MainFont";
+    src: url("../font/MainFont.woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #F4F3F0;
+    font-family: 'MainFont';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#root {
+    height: 600px;
+    width: 350px;
+    margin-top: 20px;
+    background-color: #fff;
+    display: flex;
+    box-shadow: 1px 2px 20px #46529d;
+}

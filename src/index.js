@@ -5,6 +5,8 @@ import Index from './containers/Index';
 import Item from './containers/Item';
 import {Route, Router, browserHistory, IndexRoute} from 'react-router';
 
+import './styles/main.scss';
+
 ReactDOM.render(
     (<Router history={browserHistory}>
         <Route path='/' component={App}>

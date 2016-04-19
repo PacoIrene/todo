@@ -9,9 +9,11 @@ import {bindActionCreators} from 'redux';
 import _ from 'lodash';
 import {Link} from 'react-router';
 
+import './Item.scss';
+
 import * as todoActions from '../actions/TodoActions';
 
-import TodoForm from '../components/TodoForm';
+import TodoForm from '../components/TodoForm/TodoForm';
 
 class Item extends Component {
     render() {
@@ -29,8 +31,12 @@ class Item extends Component {
                     type={item.type}/>;
         }
         return (
-            <div>
-                <Link to="/">Back</Link>
+            <div className="todo-form">
+                <div className="todo-form-head">
+                    <Link to="/"></Link>
+                    <span>{'Add new thing'}</span>
+                </div>
+                <p className="todo-form-logo"></p>
                 {form}
             </div>
         );

@@ -12,8 +12,8 @@ import {Link} from 'react-router';
 import * as todoActions from '../actions/TodoActions';
 import TodoTypes from '../constants/TodoTypes';
 
-import Summary from '../components/Summary';
-import TodoList from '../components/TodoList';
+import Summary from '../components/Summary/Summary';
+import TodoList from '../components/TodoList/TodoList';
 
 class Index extends Component {
     render() {

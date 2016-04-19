@@ -5,7 +5,7 @@
 
 import React, {Component, PropTypes} from 'react';
 import {browserHistory} from 'react-router';
-import TodoTypes from '../constants/TodoTypes';
+import TodoTypes from '../../constants/TodoTypes';
 import _ from 'lodash';
 
 export default class TodoItem extends Component {
