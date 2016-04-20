@@ -31,7 +31,7 @@ module.exports = {
       loader: 'style-loader!css-loader!sass-loader'
     },
     {
-      test: /\.(otf|ttf|eot|png|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+      test: /\.(otf|ttf|eot|png|jpg|svg|woff(2)?)(\?[a-z0-9]+)?$/,
       loader: 'file-loader'
     }]
   }

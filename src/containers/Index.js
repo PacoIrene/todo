@@ -15,6 +15,8 @@ import TodoTypes from '../constants/TodoTypes';
 import Summary from '../components/Summary/Summary';
 import TodoList from '../components/TodoList/TodoList';
 
+import './Index.scss';
+
 class Index extends Component {
     render() {
         const {todos, dispatch} = this.props;
@@ -22,8 +24,8 @@ class Index extends Component {
         const actions = bindActionCreators(todoActions, dispatch);
         const summary = getSummary(todoList);
         return (
-            <div>
-                <Summary {...summary}/>
+            <div className="todo-index-page">
+                <Summary {...summary} className="summary"/>
                 <h2>Things</h2>
                 <TodoList todos = {_.filter(todoList, {completed: false})} actions = {actions} />
                 <h2>Completed</h2>

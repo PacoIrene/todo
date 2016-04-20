@@ -6,14 +6,10 @@
 const TodoTypes = [
     {
         id: 1,
-        text: 'DEFAULT'
-    },
-    {
-        id: 2,
         text: 'WORK'
     },
     {
-        id: 3,
+        id: 2,
         text: 'FAMILLY'
     }
 ];
