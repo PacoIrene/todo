@@ -6,6 +6,8 @@
 import React, {Component, PropTypes} from 'react';
 import TodoItem from '../TodoItem/TodoItem';
 
+import './TodoList.scss';
+
 export default class TodoList extends Component {
     static propTypes = {
         todos: PropTypes.array.isRequired,
@@ -14,7 +16,7 @@ export default class TodoList extends Component {
 
     render() {
         return (
-            <ul>
+            <ul className="todo-list">
                 {
                     _.map(this.props.todos, todo => {
                         return (

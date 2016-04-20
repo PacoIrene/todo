@@ -47,7 +47,7 @@ export default class Summary extends Component {
                             })
                         }
                     </div>
-                    <span className="todo-summary-rate">{this.props.completedRate}% Completed</span>
+                    <span className="todo-summary-rate">{this.props.completedRate}% done</span>
                 </div>
             </section>
         );

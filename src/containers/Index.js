@@ -23,14 +23,22 @@ class Index extends Component {
         const todoList = todos.get('todoList').toList().toJS();
         const actions = bindActionCreators(todoActions, dispatch);
         const summary = getSummary(todoList);
+        const todoItems = _.filter(todoList, {completed: false});
+        const doneItems = _.filter(todoList, {completed: true});
+        const todoContent = todoItems.length > 0 ? <TodoList todos={todoItems} actions={actions}/> : <p className="empty-tip">No Items</p>;
         return (
             <div className="todo-index-page">
-                <Summary {...summary} className="summary"/>
-                <h2>Things</h2>
-                <TodoList todos = {_.filter(todoList, {completed: false})} actions = {actions} />
-                <h2>Completed</h2>
-                <TodoList todos = {_.filter(todoList, {completed: true})} actions = {actions} />
-                <Link to='/create'>Add</Link>
+                <Summary {...summary}/>
+                <section className="todo-index-main">
+                    <h2 className="todo-list-title">THINGS</h2>
+                    {todoContent}
+                    <div className="completed-area">
+                        <h2 className="todo-list-title completed">COMPLETED</h2>
+                        <span className="completed-item-link">{doneItems.length}</span>
+                        <TodoList todos={doneItems} actions={actions}/>
+                    </div>
+                </section>
+                <Link to='/create' className="add-tem-link"></Link>
             </div>
         );
     }

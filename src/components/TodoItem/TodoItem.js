@@ -7,6 +7,9 @@ import React, {Component, PropTypes} from 'react';
 import {browserHistory} from 'react-router';
 import TodoTypes from '../../constants/TodoTypes';
 import _ from 'lodash';
+import classNames from 'classNames';
+
+import './TodoItem.scss';
 
 export default class TodoItem extends Component {
     static propTypes = {
@@ -19,16 +22,18 @@ export default class TodoItem extends Component {
     }
 
     render() {
-        const completeButton = <button onClick={() => this.props.completeItem(this.props.id)}>complete</button>;
+        const completeButton = <button onClick={() => this.props.completeItem(this.props.id)} className="check-operator"></button>;
         return (
-            <div>
-                <span>{_.find(TodoTypes, {id: this.props.type}).text}</span>
-                <div>
+            <div className={"todo-item " + classNames({'todo-item-checkd': this.props.completed})}>
+                <span className={'item-icon icon-' + _.find(TodoTypes, {id: this.props.type}).alias}></span>
+                <div className="todo-item-content">
                     <p onClick={this.readDetail.bind(this)}>{this.props.content}</p>
                     <p>{this.props.time}{this.props.location}</p>
                 </div>
-                {!this.props.completed && completeButton}
-                <button onClick={() => this.props.deleteItem(this.props.id)}>remove</button>
+                <div className="todo-item-operator">
+                    {!this.props.completed && completeButton}
+                    <button onClick={() => this.props.deleteItem(this.props.id)} className="delete-operator"></button>
+                </div>
             </div>
         );
     }

@@ -1,0 +1,65 @@
+@import "../../styles/_variable.scss";
+
+.todo-item {
+    display: flex;
+    padding: 5px 0;
+    height: 60px;
+    cursor: pointer;
+    .item-icon {
+        margin: 2px;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        border: 1px solid $item-border-color;
+    }
+    .item-icon.icon-work {
+        background: url('../../image/work.png') no-repeat center;
+        background-size: 28px;
+    }
+    .item-icon.icon-family {
+        background: url('../../image/family.png') no-repeat center;
+        background-size: 28px;
+    }
+    .todo-item-content {
+        flex-grow: 2;
+        flex-basis: auto;
+        padding-left: 15px;
+    }
+    .todo-item-operator {
+        flex-basis: 90px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        button {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 1px solid $item-border-color;
+            background-color: #fff;
+        }
+        button:focus {
+            outline: none;
+        }
+        .check-operator:hover {
+            background: url('../../image/done-active.png') no-repeat center;
+            background-size: 14px;
+            border: 2px solid $form-background-color;
+        }
+        .delete-operator {
+            background: url('../../image/delete.png') no-repeat center;
+            background-size: 12px;
+            border: 2px solid #d80027;
+            margin-left: 15px;
+        }
+    }
+}
+
+.todo-item.todo-item-checkd {
+    cursor: default;
+    color: $border-font-color;
+    .item-icon.icon-work,
+    .item-icon.icon-family {
+        background: url('../../image/done.png') no-repeat center;
+        background-color: $form-background-color;
+    }
+}

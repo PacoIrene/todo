@@ -1,0 +1,10 @@
+@import "../../styles/_variable.scss";
+
+.todo-list {
+    .todo-item {
+        border-bottom: 1px solid $item-border-color;
+    }
+    .todo-item:last-child {
+        border-bottom: none;
+    }
+}

@@ -1,3 +1,63 @@
+@import "../styles/_variable.scss";
+
 .todo-index-page {
+    position: relative;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    .todo-list-title {
+        font-size: 14px;
+        font-weight: normal;
+        color: $border-font-color;
+    }
+    .todo-summary {
+        flex-basis: 180px;
+    }
+    .todo-index-main {
+        flex-basis: auto;
+        flex-grow: 2;
+        padding: 15px;
+        padding-top: 0;
+        overflow-y: auto;
+        .empty-tip {
+            color: $border-font-color;
+            text-align: center;
+        }
+        .completed-area {
+            border-top: 1px solid $item-border-color;
+            padding-top: 10px;
+            line-height: 24px;
+            .todo-list-title {
+                margin: 0;
+                display: inline-block;
+            }
+            .completed-item-link {
+                display: inline-block;
+                margin-left: 5px;
+                width: 24px;
+                height: 24px;
+                line-height: 24px;
+                background-color: $border-font-color;
+                border-radius: 50%;
+                color: #fff;
+                text-align: center;
+                text-decoration: none;
+            }
+        }
+    }
+    .add-tem-link {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 60px;
+        height: 60px;
+        background: url('../image/add.png') no-repeat center;
+        background-color: $highlight-color;
+        border-radius: 50%;
+        background-size: 18px;
+        box-shadow: 0 0 10px $highlight-color;
+        &:hover {
+            background-color: $highlight-color * 1.05;
+        }
+    }
 }
