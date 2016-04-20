@@ -11,7 +11,9 @@ $select-left-padding: 10px;
     border-bottom: 1px solid $form-border-color;
     cursor: pointer;
     ul {
-        display: none;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
         position: absolute;
         left: 0;
         right: 0;
@@ -20,6 +22,7 @@ $select-left-padding: 10px;
         background-color: $form-background-color;
         border-top: 0;
         box-shadow: 0 1px 20px $form-background-color * 0.8;
+        transition: opacity 0.3s ease;
         li {
             list-style: none;
             padding-left: $select-left-padding;
@@ -43,7 +46,9 @@ $select-left-padding: 10px;
 .select.active {
     border-bottom: 1px solid $form-background-color;
     ul {
-        display: block;
+        opacity: 1;
+        height: auto;
+        transition: opacity 0.3s ease;
     }
     &:after {
         transform: rotate(180deg);

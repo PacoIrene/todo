@@ -57,6 +57,7 @@
 .todo-item.todo-item-checkd {
     cursor: default;
     color: $border-font-color;
+    text-decoration: line-through;
     .item-icon.icon-work,
     .item-icon.icon-family {
         background: url('../../image/done.png') no-repeat center;
