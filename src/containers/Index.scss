@@ -19,6 +19,9 @@
         padding: 15px;
         padding-top: 0;
         overflow-y: auto;
+        &::-webkit-scrollbar {
+            display: none;
+        }
         .empty-tip {
             color: $border-font-color;
             text-align: center;
